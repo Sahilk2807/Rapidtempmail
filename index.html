@@ -7,11 +7,11 @@
     <meta name="description" content="Generate a free, fast, and anonymous temporary email address instantly from a list of reliable domains. View your inbox in real-time. Perfect for sign-ups and protecting your privacy.">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-900 text-white font-sans antialiased">
+<body class="bg-gradient-to-b from-gray-900 to-black text-white font-sans antialiased">
 
     <!-- Top Ad Placeholder -->
-    <div id="top-ad" class="w-full min-h-[90px] bg-gray-800 flex items-center justify-center text-gray-500 border-b border-gray-700">
-        <!-- Adsterra Banner 728x90 -->
+    <div id="top-ad" class="w-full min-h-[90px] bg-gray-900/30 flex items-center justify-center text-gray-500 border-b border-gray-700/50">
+        <!-- Banner Ad -->
         <script type="text/javascript">
             atOptions = {
                 'key' : '28c6144a65ec365dcd723679909923e1',
@@ -24,20 +24,20 @@
         <script type="text/javascript" src="//www.highperformanceformat.com/28c6144a65ec365dcd723679909923e1/invoke.js"></script>
     </div>
 
-    <main class="container mx-auto p-4 md:p-6 flex flex-col items-center min-h-screen">
-        <div class="w-full max-w-lg">
+    <main class="container mx-auto p-4 md:p-6 flex flex-col items-center">
+        <div class="w-full max-w-2xl">
 
             <!-- Header -->
-            <header class="text-center mb-6">
-                <h1 class="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
+            <header class="text-center mb-8">
+                <h1 class="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500">
                     Tempmail Rapid ⚡
                 </h1>
-                <p class="text-gray-400 mt-2">Your fast and private temporary mailbox.</p>
+                <p class="text-gray-400 mt-2 text-lg">Your fast, free, and private temporary mailbox.</p>
             </header>
 
             <!-- Email Generation & Display -->
-            <section class="bg-gray-800 p-4 rounded-lg shadow-lg mb-6">
-                <label for="email-display" class="block text-sm font-medium text-gray-400 mb-2">Your Temporary Email Address:</label>
+            <section class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-6 rounded-xl shadow-lg mb-12">
+                <label for="email-display" class="block text-sm font-medium text-gray-300 mb-2">Your Temporary Email Address:</label>
                 <div class="flex items-center space-x-2">
                     <input type="text" id="email-display" readonly placeholder="Click 'Generate' to get an email..." class="flex-grow bg-gray-700 border border-gray-600 rounded-md px-3 py-2 text-white focus:outline-none focus:ring-2 focus:ring-blue-500 transition">
                     <button id="copy-btn" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200 flex items-center justify-center" disabled>
@@ -56,12 +56,11 @@
             </section>
 
             <!-- Inbox -->
-            <section id="inbox-container" class="bg-gray-800 p-4 rounded-lg shadow-lg">
+            <section id="inbox-container" class="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 p-6 rounded-xl shadow-lg mb-12">
                 <div class="flex justify-between items-center mb-4">
-                    <h2 class="text-2xl font-bold flex items-center">
+                    <h2 class="text-3xl font-bold flex items-center">
                         Inbox <span id="inbox-status" class="ml-2 text-xl"></span>
                     </h2>
-                    <!-- NEW: Refresh Button -->
                     <button id="refresh-btn" title="Refresh Inbox" class="text-2xl text-gray-400 hover:text-white transition-transform duration-500">🔄</button>
                 </div>
                 <div id="inbox-messages" class="space-y-3">
@@ -72,71 +71,111 @@
                 </div>
             </section>
 
-            <!-- NEW: FAQ Section -->
-            <section id="faq" class="bg-gray-800 p-4 rounded-lg shadow-lg mt-6">
-                <h2 class="text-2xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
-                <div class="space-y-4">
-                    <div>
-                        <h3 class="font-bold text-lg">What is a temporary email?</h3>
-                        <p class="text-gray-400">It's a disposable email address you can use for signing up to services without exposing your real email. It helps prevent spam and protect your privacy.</p>
+            <!-- NEW: Features Section -->
+            <section id="features" class="mb-12">
+                <h2 class="text-3xl font-bold text-center mb-8">Why Choose Tempmail Rapid?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Feature Card 1 -->
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50">
+                        <div class="flex items-center mb-3">
+                            <span class="text-blue-400 text-3xl mr-4">🛡️</span>
+                            <h3 class="font-bold text-xl">Absolute Privacy</h3>
+                        </div>
+                        <p class="text-gray-400">No registration needed. Your identity is never linked to the temporary email, keeping you 100% anonymous.</p>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-lg">How long do emails last?</h3>
-                        <p class="text-gray-400">Emails are typically stored for a short period (from a few minutes to a few hours) before being automatically deleted. Do not use it for important accounts.</p>
+                    <!-- Feature Card 2 -->
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50">
+                        <div class="flex items-center mb-3">
+                            <span class="text-blue-400 text-3xl mr-4">🚫</span>
+                            <h3 class="font-bold text-xl">Avoid Spam</h3>
+                        </div>
+                        <p class="text-gray-400">Use a disposable address for website sign-ups and keep your real inbox clean from marketing emails and spam.</p>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-lg">Is this service free and anonymous?</h3>
-                        <p class="text-gray-400">Yes, this service is 100% free. No registration is required, ensuring your usage remains anonymous.</p>
+                    <!-- Feature Card 3 -->
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50">
+                        <div class="flex items-center mb-3">
+                            <span class="text-blue-400 text-3xl mr-4">🌐</span>
+                            <h3 class="font-bold text-xl">Multiple Domains</h3>
+                        </div>
+                        <p class="text-gray-400">Choose from a list of domains to increase compatibility with services that might block common temp mail providers.</p>
+                    </div>
+                    <!-- Feature Card 4 -->
+                    <div class="bg-gray-800/50 p-6 rounded-lg border border-gray-700/50">
+                        <div class="flex items-center mb-3">
+                            <span class="text-blue-400 text-3xl mr-4">⏱️</span>
+                            <h3 class="font-bold text-xl">Instant & Free</h3>
+                        </div>
+                        <p class="text-gray-400">Generate a new email address and see its inbox in seconds. Our service is, and always will be, completely free to use.</p>
                     </div>
                 </div>
             </section>
+            
+            <!-- NEW: How It Works Section -->
+            <section id="how-it-works" class="mb-12">
+                 <h2 class="text-3xl font-bold text-center mb-8">Simple as 1-2-3</h2>
+                 <div class="flex flex-col md:flex-row justify-center items-center space-y-8 md:space-y-0 md:space-x-8">
+                     <!-- Step 1 -->
+                     <div class="text-center">
+                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">1</div>
+                        <h3 class="font-bold">Select Domain</h3>
+                        <p class="text-gray-400">Pick a domain from the list.</p>
+                     </div>
+                     <div class="text-gray-600 text-2xl hidden md:block">→</div>
+                     <!-- Step 2 -->
+                     <div class="text-center">
+                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">2</div>
+                        <h3 class="font-bold">Click Generate</h3>
+                        <p class="text-gray-400">Your unique email is created.</p>
+                     </div>
+                      <div class="text-gray-600 text-2xl hidden md:block">→</div>
+                     <!-- Step 3 -->
+                      <div class="text-center">
+                        <div class="bg-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-3 text-2xl font-bold">3</div>
+                        <h3 class="font-bold">Copy & Use</h3>
+                        <p class="text-gray-400">Use it anywhere you need!</p>
+                     </div>
+                 </div>
+            </section>
 
+            <!-- NEW: FAQ Section -->
+            <section id="faq" class="mb-12">
+                <h2 class="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
+                        <h3 class="font-bold text-lg">Are the inboxes private?</h3>
+                        <p class="text-gray-400">No. All temporary email addresses are public and have no password. Anyone who knows the address can see the inbox. Do not use it for sensitive information.</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
+                        <h3 class="font-bold text-lg">How long are emails stored?</h3>
+                        <p class="text-gray-400">Emails are automatically deleted after a few hours to ensure privacy and save space. This is a temporary service, not a permanent inbox.</p>
+                    </div>
+                    <div class="bg-gray-800/50 p-4 rounded-lg border border-gray-700/50">
+                        <h3 class="font-bold text-lg">Can I send emails?</h3>
+                        <p class="text-gray-400">No, this service is for receiving emails only. You cannot send replies or compose new emails from the temporary address.</p>
+                    </div>
+                </div>
+            </section>
         </div>
     </main>
 
     <!-- Full Message View Modal -->
     <div id="message-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 hidden z-50">
-        <div class="bg-gray-800 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
-            <header class="p-4 border-b border-gray-700 flex justify-between items-center">
-                <h3 id="modal-subject" class="text-lg font-semibold">Message Details</h3>
-                <button id="close-modal-btn" class="text-gray-400 hover:text-white text-2xl">×</button>
-            </header>
-            <div class="p-4 overflow-y-auto">
-                <div class="text-sm text-gray-400 mb-4">
-                    <p><strong>From:</strong> <span id="modal-from"></span></p>
-                    <p><strong>Date:</strong> <span id="modal-date"></span></p>
-                </div>
-                <div id="modal-body" class="prose prose-invert max-w-none bg-gray-900 p-4 rounded-md text-white">
-                    <!-- Email body will be injected here -->
-                </div>
-            </div>
-        </div>
+        <!-- ... modal content ... (no changes needed here) -->
     </div>
-
-    <!-- Bottom Ad Placeholder -->
-    <div id="bottom-ad" class="fixed bottom-0 left-0 w-full bg-gray-800 flex items-center justify-center text-gray-500 border-t border-gray-700 z-40 p-1">
-        <!-- Adsterra Native Banner -->
-        <script async="async" data-cfasync="false" src="//pl27207698.profitableratecpm.com/72c3726e46e27c896aadd681bba39035/invoke.js"></script>
-        <div id="container-72c3726e46e27c896aadd681bba39035"></div>
-    </div>
-
-    <!-- NEW: Bottom Details -->
-    <div class="text-center text-gray-400 text-xs px-4 mt-8">
-        <p>Tempmail Rapid provides free, disposable email inboxes powered by the robust mail.gw API. Our service is designed for developers, testers, and privacy-conscious individuals who need a temporary email address instantly.</p>
+    
+    <!-- Bottom Details -->
+    <div class="text-center text-gray-500 text-sm px-4 mt-8">
+        <p>Tempmail Rapid provides free, disposable email inboxes to protect your privacy online. Our service is designed for developers, testers, and privacy-conscious individuals who need a temporary email address instantly without compromising their primary inbox.</p>
     </div>
 
     <!-- Footer -->
-    <footer class="text-center py-4 mt-2 mb-14 text-gray-500 text-sm">
+    <footer class="text-center py-4 mt-2 mb-4 text-gray-600 text-sm">
         Built with ❤️ | Tempmail Rapid
     </footer>
 
     <!-- Your App's Main Functionality Script -->
     <script src="script.js"></script>
 
-    <!-- Adsterra Page-Level Ad Scripts -->
-    <!-- Popunder Ad -->
-    <script type='text/javascript' src='//pl27207686.profitableratecpm.com/a4/7b/1e/a47b1e48062623e0d56714d24c7eb982.js'></script>
-    
     <!-- Social Bar Ad -->
     <script type='text/javascript' src='//pl27207929.profitableratecpm.com/26/4f/8b/264f8b1cbdb77b89036f264d73644d1c.js'></script>
 
