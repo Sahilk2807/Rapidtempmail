@@ -4,7 +4,6 @@
     const urlParams = new URLSearchParams(window.location.search);
     if (urlParams.get('i') === '1') {
         // CORRECTED: Force a page reload to the URL without the parameter.
-        // This ensures all API calls happen from a clean origin.
         window.location.href = window.location.pathname;
     }
 })();
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inboxMessages = document.getElementById('inbox-messages');
     const inboxPlaceholder = document.getElementById('inbox-placeholder');
     const inboxStatus = document.getElementById('inbox-status');
+    const refreshBtn = document.getElementById('refresh-btn'); // NEW
 
     // Modal Elements
     const messageModal = document.getElementById('message-modal');
@@ -45,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const domainData = await domainResponse.json();
             const domains = domainData['hydra:member'];
 
-            domainSelect.innerHTML = ''; // Clear "loading" option
+            domainSelect.innerHTML = '';
 
             domains.forEach(domainObj => {
                 if (domainObj.isActive) {
@@ -55,7 +55,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     domainSelect.appendChild(option);
                 }
             });
-            // This line will now be reached correctly.
             generateBtn.disabled = false;
             generateBtnText.textContent = 'Generate';
 
@@ -83,7 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const address = `${username}@${selectedDomain}`;
 
         try {
-            // 1. Create Account
             const accountResponse = await fetch(`${API_BASE_URL}/accounts`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -92,7 +90,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!accountResponse.ok) throw new Error('Failed to create account.');
             const accountData = await accountResponse.json();
 
-            // 2. Get Token
             const tokenResponse = await fetch(`${API_BASE_URL}/token`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -101,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!tokenResponse.ok) throw new Error('Failed to get auth token.');
             const tokenData = await tokenResponse.json();
 
-            // 3. Set State
             currentAccount = {
                 id: accountData.id,
                 address: address,
@@ -199,8 +195,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const startInboxRefresh = () => {
         if (refreshInterval) clearInterval(refreshInterval);
-        fetchInboxMessages(); // Initial fetch
+        fetchInboxMessages();
         refreshInterval = setInterval(fetchInboxMessages, 10000);
+    };
+
+    const manualRefresh = async () => {
+        if (!currentAccount) return;
+        refreshBtn.classList.add('animate-spin');
+        try {
+            await fetchInboxMessages();
+        } finally {
+            setTimeout(() => {
+                refreshBtn.classList.remove('animate-spin');
+            }, 500);
+        }
     };
     
     const setGenerateButtonLoading = (isLoading) => {
@@ -258,6 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- EVENT LISTENERS ---
     generateBtn.addEventListener('click', generateNewEmail);
     copyBtn.addEventListener('click', copyEmailToClipboard);
+    refreshBtn.addEventListener('click', manualRefresh); // NEW
     closeModalBtn.addEventListener('click', closeModal);
     
     window.addEventListener('keydown', (e) => {
