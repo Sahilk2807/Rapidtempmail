@@ -57,9 +57,13 @@
 
             <!-- Inbox -->
             <section id="inbox-container" class="bg-gray-800 p-4 rounded-lg shadow-lg">
-                <h2 class="text-2xl font-bold mb-4 flex items-center">
-                    Inbox <span id="inbox-status" class="ml-2 text-xl"></span>
-                </h2>
+                <div class="flex justify-between items-center mb-4">
+                    <h2 class="text-2xl font-bold flex items-center">
+                        Inbox <span id="inbox-status" class="ml-2 text-xl"></span>
+                    </h2>
+                    <!-- NEW: Refresh Button -->
+                    <button id="refresh-btn" title="Refresh Inbox" class="text-2xl text-gray-400 hover:text-white transition-transform duration-500">🔄</button>
+                </div>
                 <div id="inbox-messages" class="space-y-3">
                     <!-- Messages will be injected here by JS -->
                 </div>
@@ -67,9 +71,29 @@
                     <p>Generate an email to see your messages.</p>
                 </div>
             </section>
+
+            <!-- NEW: FAQ Section -->
+            <section id="faq" class="bg-gray-800 p-4 rounded-lg shadow-lg mt-6">
+                <h2 class="text-2xl font-bold mb-4 text-center">Frequently Asked Questions</h2>
+                <div class="space-y-4">
+                    <div>
+                        <h3 class="font-bold text-lg">What is a temporary email?</h3>
+                        <p class="text-gray-400">It's a disposable email address you can use for signing up to services without exposing your real email. It helps prevent spam and protect your privacy.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">How long do emails last?</h3>
+                        <p class="text-gray-400">Emails are typically stored for a short period (from a few minutes to a few hours) before being automatically deleted. Do not use it for important accounts.</p>
+                    </div>
+                    <div>
+                        <h3 class="font-bold text-lg">Is this service free and anonymous?</h3>
+                        <p class="text-gray-400">Yes, this service is 100% free. No registration is required, ensuring your usage remains anonymous.</p>
+                    </div>
+                </div>
+            </section>
+
         </div>
     </main>
-    
+
     <!-- Full Message View Modal -->
     <div id="message-modal" class="fixed inset-0 bg-black bg-opacity-70 flex items-center justify-center p-4 hidden z-50">
         <div class="bg-gray-800 rounded-lg shadow-xl w-full max-w-2xl max-h-[90vh] flex flex-col">
@@ -96,8 +120,13 @@
         <div id="container-72c3726e46e27c896aadd681bba39035"></div>
     </div>
 
+    <!-- NEW: Bottom Details -->
+    <div class="text-center text-gray-400 text-xs px-4 mt-8">
+        <p>Tempmail Rapid provides free, disposable email inboxes powered by the robust mail.gw API. Our service is designed for developers, testers, and privacy-conscious individuals who need a temporary email address instantly.</p>
+    </div>
+
     <!-- Footer -->
-    <footer class="text-center py-4 mt-8 mb-14 text-gray-500 text-sm">
+    <footer class="text-center py-4 mt-2 mb-14 text-gray-500 text-sm">
         Built with ❤️ | Tempmail Rapid
     </footer>
 
